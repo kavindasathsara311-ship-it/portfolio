@@ -15,10 +15,10 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = "0
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Disconnect once revealed to prevent re-trigger flicker
+          observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.05 }
     );
 
     if (ref.current) {
@@ -33,7 +33,6 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = "0
       ref={ref}
       style={{
         animationDelay: delay,
-        willChange: 'opacity, transform, filter',
       }}
       className={`${className} ${
         isVisible ? "animate-fade-up opacity-100" : "opacity-0"
