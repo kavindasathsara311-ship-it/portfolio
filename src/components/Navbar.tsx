@@ -29,10 +29,14 @@ export const Navbar: React.FC = () => {
         ))}
       </div>
 
-      {/* Right: CTA (hidden on mobile) */}
-      <a href="#contact" className="hidden md:inline-flex">
+      {/* Right: Download CV CTA (hidden on mobile) */}
+      <a
+        href="/Kavinda_Sathsara_CV.pdf"
+        download="Kavinda_Sathsara_CV.pdf"
+        className="hidden md:inline-flex"
+      >
         <Button variant="navCta" size="lg">
-          Hire Me
+          Download CV
         </Button>
       </a>
     </nav>
